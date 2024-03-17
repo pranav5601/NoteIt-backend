@@ -1,3 +1,4 @@
+const { Long } = require('mongodb');
 const mongoose = require('mongoose');
 
 const NoteSchema = new mongoose.Schema({
@@ -13,7 +14,7 @@ const NoteSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    timeStemp: {
+    timeStamp: {
         type: Number,
         require: true
     },

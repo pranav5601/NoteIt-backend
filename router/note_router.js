@@ -26,7 +26,7 @@ noteRouter.post('/create_note', async (req, res)=>{
     try{
 
         const result = await data.save();
-        console.log("Note saved successfully"+ result.insertedId)
+        console.log("Note saved successfully"+ result)
         res.status(200).json({
             message: "Note saved successfully."
         })
