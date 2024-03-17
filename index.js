@@ -109,6 +109,6 @@ app.use(reminderRouter);
 
 
 // Start the server
-app.listen(process.env.port || port,"10.0.0.161", () => {
+app.listen(process.env.port || port, () => {
     console.log(`Server running at http://10.0.0.161:${port}`);
 });
