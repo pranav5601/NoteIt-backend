@@ -1,38 +1,40 @@
-const { Long } = require('mongodb');
-const mongoose = require('mongoose');
+const { Long } = require("mongodb");
+const mongoose = require("mongoose");
 
 const NoteSchema = new mongoose.Schema({
     noteId: {
         type: Number,
-        require: true
+        unique: true,
+        require: true,
     },
+    user_id: {
+        type: String,
+    },
+
     title: {
         type: String,
-        require: true
+        require: true,
     },
     description: {
         type: String,
-        require: true
+        require: true,
     },
     timeStamp: {
         type: Number,
-        require: true
+        require: true,
     },
     isReminderSet: {
         type: Boolean,
         default: false,
-        require: true
+        require: true,
     },
     noteImages: String,
-    type: {
+    note_type: {
         type: String,
-        default: "text"
-    }
+        default: "text",
+    },
 });
 
-const Note = mongoose.model('Note', NoteSchema, 'note_data')
+const Note = mongoose.model("Note", NoteSchema, "note_data");
 
-
-module.exports = Note
-
-
+module.exports = Note;

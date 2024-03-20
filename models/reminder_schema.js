@@ -1,11 +1,14 @@
-const { Long } = require('mongodb');
-const mongoose = require('mongoose');
+const { Long } = require("mongodb");
+const mongoose = require("mongoose");
 
-
-const reminder_schema = new mongoose.Schema( {
-    id:{
+const reminder_schema = new mongoose.Schema({
+    id: {
         type: Number,
         unique: true,
+        require: true,
+    },
+    user_id: {
+        type: String,
         require: true,
     },
     noteId: {
@@ -16,17 +19,16 @@ const reminder_schema = new mongoose.Schema( {
     reminderDate: String,
     reminderRepetition: {
         type: Number,
-        require: true
+        require: true,
     },
     reminderTimestamp: {
         type: Number,
-        require: true
+        require: true,
     },
     reminderLat: Number,
-    remidnerLong: Number
-    
+    remidnerLong: Number,
 });
 
-const Reminder = mongoose.model('Reminder',reminder_schema, "reminder_data")
+const Reminder = mongoose.model("Reminder", reminder_schema, "reminder_data");
 
-module.exports = Reminder
+module.exports = Reminder;
