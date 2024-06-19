@@ -13,7 +13,10 @@ const user_schema = new mongoose.Schema({
         minlength: 5,
         require: true,
     },
+    full_name: String,
+    country: String,
     api_token: String,
+    userId: String,
 });
 
 const User = mongoose.model("User", user_schema, "user_data");

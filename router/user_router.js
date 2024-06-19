@@ -9,13 +9,13 @@ userRouter.post("/signup", async (req, res) => {
         userData.email,
         userData.password
     );
+    userData["userId"] = userData._id;
     console.log(userData);
     try {
         const result = await userData.save();
         console.log(result);
         res.status(200).send({
-            api_token: result.api_token,
-            user_id: result._id,
+            userData,
         });
     } catch (error) {
         console.log(error);
@@ -26,7 +26,7 @@ userRouter.post("/signup", async (req, res) => {
 userRouter.post("/login", async (req, res) => {
     const data = req.body;
 
-    const email_id = data.email_id;
+    const email_id = data.email;
     const password = data.password;
 
     try {
