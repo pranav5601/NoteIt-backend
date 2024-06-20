@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 const user_schema = new mongoose.Schema({
     full_name: String,
@@ -13,7 +13,7 @@ const user_schema = new mongoose.Schema({
         minlength: 5,
         require: true,
     },
-    full_name: String,
+
     country: String,
     api_token: String,
     userId: String,
