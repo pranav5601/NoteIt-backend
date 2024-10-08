@@ -2,7 +2,8 @@ const { MongoClient } = require("mongodb");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const dbUrl = process.env.DB_LINK;
+const dbUrl =
+    "mongodb+srv://pranav5601:hardcode97@pranavcluster.nm7lh.mongodb.net/note_it";
 
 async function connectDatabase() {
     try {
