@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const dbUrl =
-    "mongodb+srv://pranav5601:hardcode97@pranavcluster.nm7lh.mongodb.net/note_it";
+    "mongodb+srv://pranav5601:Silversky97@pranavcluster.nm7lh.mongodb.net/note_it";
 
 async function connectDatabase() {
     try {
