@@ -32,10 +32,10 @@ reminderRouter.get("/get_reminder_for_note/:noteId", async (req, res) => {
 });
 
 reminderRouter.get("/getAllReminders", async (req, res) => {
-    const user_id = req.query.user_id;
+    const userId = req.query.userId;
 
     try {
-        const reminder = await Reminder.find({ user_id: user_id });
+        const reminder = await Reminder.find({ userId: userId });
         res.status(200).send(reminder);
         console.log(reminder);
     } catch (error) {

@@ -7,7 +7,7 @@ const NoteSchema = new mongoose.Schema({
         unique: true,
         require: true,
     },
-    user_id: {
+    userId: {
         type: String,
     },
 
@@ -20,7 +20,7 @@ const NoteSchema = new mongoose.Schema({
         require: true,
     },
     timeStamp: {
-        type: Number,
+        type: String,
         require: true,
     },
     isReminderSet: {

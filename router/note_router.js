@@ -3,11 +3,11 @@ const Note = require("./../models/note_schema.js");
 const noteRouter = express.Router();
 const mongoose = require("mongoose");
 
-noteRouter.get("/get_notes/:user_id", async (req, res) => {
-    const userId = req.params.user_id;
+noteRouter.get("/get_notes/:userId", async (req, res) => {
+    const userId = req.params.userId;
 
     try {
-        const result = await Note.find({ user_id: userId });
+        const result = await Note.find({ userId: userId });
         console.log(result);
         res.status(200).json(result);
     } catch (error) {
@@ -39,7 +39,7 @@ noteRouter.patch("/update_note/:note_id", async (req, res) => {
     const id = req.params.note_id;
     const updates = Object.keys(req.body);
     const allowedNoteUpdate = [
-        "user_id",
+        "userId",
         "title",
         "description",
         "note_type",

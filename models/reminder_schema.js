@@ -7,7 +7,7 @@ const reminder_schema = new mongoose.Schema({
         unique: true,
         require: true,
     },
-    user_id: {
+    userId: {
         type: String,
         require: true,
     },
