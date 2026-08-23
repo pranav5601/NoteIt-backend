@@ -84,9 +84,13 @@ noteRouter.patch("/update_note/:note_id", async (req, res) => {
     }
 });
 
-noteRouter.delete("/remove_note", async (req, res) => {
+noteRouter.delete("/remove_note/:noteId", async (req, res) => {
+    const noteId = req.params.noteId;
+
     try {
-        const result = await Note.findOneAndDelete(req.body);
+        const NoteData = await Note.find({ noteId: noteId });
+
+        const result = await Note.findOneAndDelete({ noteId: noteId });
         console.log(result);
         // if (!result) {
         //     res.status(400).send({ message: "Internal error" });
