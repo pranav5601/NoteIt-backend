@@ -88,8 +88,6 @@ noteRouter.delete("/remove_note/:noteId", async (req, res) => {
     const noteId = req.params.noteId;
 
     try {
-        const NoteData = await Note.find({ noteId: noteId });
-
         const result = await Note.findOneAndDelete({ noteId: noteId });
         console.log(result);
         // if (!result) {
