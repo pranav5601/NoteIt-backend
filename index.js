@@ -14,7 +14,7 @@ app.use(
     cors({
         origin: [
             "http://localhost:5173",
-            "http://192.168.1.9:5173/",
+            "http://192.168.1.9:5173",
             "*", // Allow your local Vite dev server    // Allow your deployed frontend later
         ],
         methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
